@@ -1,3 +1,9 @@
+<?php
+  include "admin/connect.php";
+  $sql = "SELECT * FROM product";
+  $resutl = mysqli_query($conn,$sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,88 +107,18 @@
                   </nav>
             </div>
         </div>
-        <div class="container mt-2">
+        <div class="container mt-2 product">
             <div class="row">
+              <?php
+                foreach($resutl as $row){
+              ?>
                 <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
+                    <img class="mx-auto d-block mb-1 w-100" src="admin/uploads/<?php echo $row["anh"]?>" alt="">
+                    <h6 class="font-weight-bold m-0 "><?php echo $row["name"]?></h6>
+                    <p class="m-0 mt-4 mb-2">Giá bán: <span class="text-danger font-weight-bold"><?php echo $row["gia"] ?></span> ₫</p>
+                    <small><?php echo $row["mota"]?></small>
                 </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-2">
-            <div class="row">
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-2">
-            <div class="row">
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
-                <div class="col-md-3 border">
-                    <img class="mx-auto d-block mb-1" src="image/sp1.jpeg" alt="">
-                    <p class="font-weight-bold m-0">iPhone 7 Plus 32GB</p>
-                    <p class="m-0">Giá bán: 9.460.000 ₫</p>
-                    <small>Trả góp 0% trên giá bán lẻ qua Công ty tài chính (Đặc biệt: Trả trước 0đ, 0% lãi suất kỳ hạn 08 tháng qua FE Credit)</small>
-                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="container news mt-3">
